@@ -1,0 +1,47 @@
+{
+    "__json__": {
+        "description": "A JSON file containing descriptions of utility files",
+        "dependencies": {},
+        "exposes": []
+    },
+    "middlewares\\auth-middleware.ts": {
+        "description": "Auth middleware for verifying tokens",
+        "dependencies": {
+            "../utils/auth-utils": [
+                "verifyToken"
+            ]
+        },
+        "exposes": [
+            "verifyTokenMW",
+            "verifyTokenAdminMW"
+        ]
+    },
+    "middlewares\\doorman-middleware.ts": {
+        "description": "Middleware that checks for a valid doorman key in the request header",
+        "dependencies": {
+            "../utils/config": [
+                "appConfig"
+            ],
+            "../models/status-enum": [
+                "StatusCode"
+            ]
+        },
+        "exposes": [
+            "doorman"
+        ]
+    },
+    "middlewares\\errorHandler.ts": {
+        "description": "catch-all error handler middleware for express",
+        "dependencies": {
+            "../utils/helpers": [
+                "logError"
+            ],
+            "../models/exceptions": [
+                "AppException"
+            ]
+        },
+        "exposes": [
+            "catchAll"
+        ]
+    }
+}
