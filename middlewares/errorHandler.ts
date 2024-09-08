@@ -20,7 +20,7 @@ const catchAll = (
     res.status(status).send(err.message);
   } else {
     // don't expose unknown errors to user
-    res.status(status).send("Something is broken!");
+    res.status(status).send("Something is broken!!");
   }
 };
 
